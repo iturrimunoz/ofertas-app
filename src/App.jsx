@@ -2,6 +2,10 @@ import { useState, useEffect } from "react"
 import OfertaCard from './components/OfertaCard'
 import { supabase } from './supabaseClient'
 import Login from './components/Login'
+import Mapa from './components/Mapa'
+
+
+
 
 export default function App() {
   const [ofertas, setOfertas] = useState([])
@@ -137,7 +141,9 @@ export default function App() {
           Cerrar sesión
         </button>
       </div>
+      <Mapa ofertas={ofertas}/>
 
+      
       <p className="text-sm text-gray-500 mb-4">
         {ofertasFiltradas.length === 0
           ? "Sin ofertas disponibles"
